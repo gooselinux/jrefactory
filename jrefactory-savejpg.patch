@@ -1,0 +1,26 @@
+--- jrefactory/src/org/acm/seguin/uml/jpg/Save.java~	2001-09-12 13:30:42.000000000 +0100
++++ jrefactory/src/org/acm/seguin/uml/jpg/Save.java	2005-06-02 16:18:20.000000000 +0100
+@@ -60,7 +60,6 @@
+ import java.io.IOException;
+ import java.io.FileOutputStream;
+ import java.io.BufferedOutputStream;
+-import com.sun.image.codec.jpeg.*;
+ 
+ /**
+  *  Description of the Class
+@@ -89,6 +88,8 @@
+      *  Main processing method for the Save object
+      */
+     public void run() {
++	throw new RuntimeException("not supported");
++	/*
+         try {
+             Dimension dim = diagram.getPreferredSize();
+             BufferedImage doubleBuffer = new BufferedImage(dim.width, dim.height, BufferedImage.TYPE_INT_RGB);
+@@ -105,5 +106,6 @@
+         } catch (IOException ioe) {
+             ioe.printStackTrace();
+         }
++	*/
+     }
+ }

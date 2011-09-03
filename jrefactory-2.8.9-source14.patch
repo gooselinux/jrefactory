@@ -1,0 +1,51 @@
+diff -up ./build.xml.sav ./build.xml
+--- ./build.xml.sav	2009-03-20 15:15:18.000000000 -0400
++++ ./build.xml	2009-03-20 15:29:17.000000000 -0400
+@@ -209,6 +209,7 @@ Version:
+             destdir="${build.dest}"
+             debug="${debug}"
+             classpathref="build.classpath"
++			source="1.4"
+ 	  >
+         <include name="org/acm/seguin/tools/build/CreateVersion.java"/>
+      </javac>
+@@ -359,6 +360,7 @@ Version:
+             destdir="${build.dest}"
+             debug="${debug}"
+             classpathref="build.classpath"
++			source="1.4"
+             >
+         <exclude name="javastyle/**"/>
+         <exclude name="org/acm/seguin/ide/jedit/**"    unless="jedit.present"/>
+@@ -379,6 +381,7 @@ Version:
+             destdir="${build.dest}"
+             debug="${debug}"
+             classpathref="jEdit.build.classpath"
++			source="1.4"
+ 	         >
+         <exclude name="org/acm/seguin/ide/cafe/**"/>
+         <exclude name="org/acm/seguin/ide/jbuilder/**"/>
+@@ -400,6 +403,7 @@ Version:
+             destdir="${test.classes.dir}"
+             debug="${debug}"
+             classpathref="test.build.classpath"
++			source="1.4"
+ 	         >
+      </javac>
+   </target>
+@@ -581,6 +585,7 @@ Version:
+ 	         destdir="${build.dest}"
+ 	         debug="${debug}"
+ 	         classpathref="build.classpath"
++			source="1.4"
+             >
+         <include name="PrettyPrinter.java" />
+         <include name="org/acm/seguin/ant/*.java" />
+@@ -1089,6 +1094,7 @@ Version:
+ 	         destdir="${build.dest}"
+ 	         debug="${debug}"
+ 	         classpathref="build.classpath"
++			source="1.4"
+             >
+         <include name="PrettyPrinter.java" />
+         <include name="org/acm/seguin/ant/Pretty.java" />

@@ -1,0 +1,24 @@
+--- src/org/acm/seguin/ant/Pretty.java.fixcrlf	2003-08-28 19:42:38.000000000 +0200
++++ src/org/acm/seguin/ant/Pretty.java	2005-04-19 19:03:23.776430224 +0200
+@@ -166,7 +166,20 @@
+    private void configureFixCrlfTask( FixCRLF fixcrlf_task ) {
+       fixcrlf_task.setOwningTarget( getOwningTarget() );
+       FixCRLF.CrLf eol = new FixCRLF.CrLf();
+-      eol.setValue("cr");
++      FileSettings prettySettings = FileSettings.getRefactoryPrettySettings();
++      String lineEnding = prettySettings.getString("end.line");
++      if (lineEnding==null || lineEnding.length()==0) {
++          lineEnding = "asis";
++      } else {
++          lineEnding = lineEnding.toLowerCase();
++          //handle legacy use of obsolete "nl" and "crnl" config values
++          if (lineEnding.equals("nl")) {
++              lineEnding = "lf";
++          } else if (lineEnding.equals("crnl")) {
++              lineEnding = "crlf";
++          }
++      }
++      eol.setValue(lineEnding);
+       fixcrlf_task.setEol(eol);
+    }
+ 
